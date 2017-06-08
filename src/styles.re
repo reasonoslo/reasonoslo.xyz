@@ -26,8 +26,6 @@ let merge ::separator=" " lstStyles =>
     |> Array.map Js.String.make
     |> Js.Array.joinWith separator;
 
-/* Color palette: http://paletton.com/#uid=6340W0klr++cu++he++ogWkkcvx */
-
 /* Style helper */
 let style ( tag, styles ) => global tag styles;
 let media mq => insert mq;

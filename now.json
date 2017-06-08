@@ -1,5 +1,7 @@
 {
   "alias": "reasonoslo.xyz",
-  "type": "static",
-  "files": ["index.html", "logo.png"]
+  "type": "npm",
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
