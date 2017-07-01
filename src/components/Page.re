@@ -1,15 +1,9 @@
-module Page = {
-  include ReactRe.Component;
+let component = ReasonReact.statelessComponent "Page";
 
-  let name = "Page";
-  type props = {children: list ReactRe.reactElement};
-
-  let render {props} =>
+let make children => {
+  ...component,
+  render: fun () _self =>
     <div>
-      (ReactRe.listToElement props.children)
-    </div>;
+      (ReasonReact.arrayToElement children)
+    </div>
 };
-
-include ReactRe.CreateComponent Page;
-
-let createElement ::children => wrapProps {children: children} ::children;

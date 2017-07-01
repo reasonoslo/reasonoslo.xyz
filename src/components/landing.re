@@ -1,13 +1,8 @@
-module Landing = {
-  include ReactRe.Component.JsProps;
+let component = ReasonReact.statelessComponent "Landing";
 
-  let name = "Landing";
-  type props = {children: list ReactRe.reactElement};
-
-  let jsPropsToReasonProps = Some (fun jsProps => {children: jsProps##children});
-  type jsProps = Js.t {. children: list ReactRe.reactElement };
-
-  let render {props} =>
+let make _children => {
+  ...component,
+  render: fun () _self =>
     <Page>
       <div className=((Styles.make textAlign::"center" ()) |> Styles.className)>
         <img src="/static/logo.png" alt="Reason Oslo" width="300" />
@@ -17,11 +12,8 @@ module Landing = {
           <a href="https://twitter.com/reasonoslo">(ReactRe.stringToElement "Twitter")</a>
           (ReactRe.stringToElement ".")
         </p>
-        (ReactRe.listToElement props.children)
       </div>
-    </Page>;
+    </Page>
 };
 
-include ReactRe.CreateComponent Landing;
-
-let createElement ::children => wrapProps {children: children} ::children;
+let jsComponent = ReasonReact.wrapReasonForJs ::component (fun _jsProps => make [||]);
