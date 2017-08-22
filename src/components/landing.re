@@ -1,5 +1,6 @@
 let component = ReasonReact.statelessComponent "Landing";
 
+
 let make _children => {
   ...component,
   render: fun () _self =>
@@ -12,6 +13,7 @@ let make _children => {
           <a href="https://twitter.com/reasonoslo">(ReactRe.stringToElement "Twitter")</a>
           (ReactRe.stringToElement ".")
         </p>
+        <Resources />
       </div>
     </Page>
 };
