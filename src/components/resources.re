@@ -2,7 +2,7 @@ let component = ReasonReact.statelessComponent "Resources";
 
 let make _children => {
   ...component,
-  render: fun () _self =>
+  render: fun _self =>
     <div
       className=(
         Styles.make
@@ -12,42 +12,44 @@ let make _children => {
           margin::"140px"
           () |> Styles.className
       )>
-      <h1> (ReactRe.stringToElement "Good Resources") </h1>
+      <h1> (ReasonReact.stringToElement "Good Resources") </h1>
       <ul>
         <li>
           <a href="https://reasonml.github.io/">
-            (ReactRe.stringToElement "Reason documentation")
+            (ReasonReact.stringToElement "Reason documentation")
           </a>
         </li>
         <li>
           <a
             href="https://reasonml.github.io/guide/editor-tools/global-installation">
-            (ReactRe.stringToElement "Tool installation")
+            (ReasonReact.stringToElement "Tool installation")
           </a>
         </li>
         <li>
           <a
             href="https://reasonml.github.io/guide/javascript/syntax-cheatsheet">
-            (ReactRe.stringToElement "Syntax cheatsheet")
+            (ReasonReact.stringToElement "Syntax cheatsheet")
           </a>
         </li>
       </ul>
       <strong>
         <a href="https://jaredforsyth.com/">
-          (ReactRe.stringToElement "Jared Forsyths blog")
+          (ReasonReact.stringToElement "Jared Forsyths blog")
         </a>
       </strong>
       <ul>
         <li>
           <a
             href="https://jaredforsyth.com/2017/07/05/a-reason-react-tutorial/">
-            (ReactRe.stringToElement "A ReasonReact Tutorial")
+            (ReasonReact.stringToElement "A ReasonReact Tutorial")
           </a>
         </li>
         <li>
           <a
             href="https://jaredforsyth.com/2017/06/17/your-first-native-reason-ocaml-project/">
-            (ReactRe.stringToElement "Your first native Reason/OCaml project")
+            (
+              ReasonReact.stringToElement "Your first native Reason/OCaml project"
+            )
           </a>
         </li>
       </ul>

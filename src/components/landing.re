@@ -2,17 +2,17 @@ let component = ReasonReact.statelessComponent "Landing";
 
 let make _children => {
   ...component,
-  render: fun () _self =>
+  render: fun _self =>
     <Page>
       <div className=(Styles.make textAlign::"center" () |> Styles.className)>
         <img src="/static/logo.png" alt="Reason Oslo" width="300" />
-        <header> (ReactRe.stringToElement "Reason Oslo Meetup") </header>
+        <header> (ReasonReact.stringToElement "Reason Oslo Meetup") </header>
         <p>
-          (ReactRe.stringToElement "Follow us on ")
+          (ReasonReact.stringToElement "Follow us on ")
           <a href="https://twitter.com/reasonoslo">
-            (ReactRe.stringToElement "Twitter")
+            (ReasonReact.stringToElement "Twitter")
           </a>
-          (ReactRe.stringToElement ".")
+          (ReasonReact.stringToElement ".")
         </p>
         <Resources />
       </div>
