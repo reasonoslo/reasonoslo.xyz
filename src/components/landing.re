@@ -18,13 +18,14 @@ let make _children => {
     <Page>
       <div className=(Styles.make textAlign::"center" () |> Styles.className)>
         <img src="/static/logo.png" alt="Reason Oslo" width="300" />
-        <header> (ReasonReact.stringToElement "Reason Oslo Meetup") </header>
+        <header className=(Styles.make fontSize::"2rem" () |> Styles.className)>
+          (ReasonReact.stringToElement "Reason Oslo Meetup")
+        </header>
         <p>
           (ReasonReact.stringToElement "Follow us on ")
           <a href="https://twitter.com/reasonoslo"> (ReasonReact.stringToElement "Twitter") </a>
           (ReasonReact.stringToElement ".")
         </p>
-        <Resources />
       </div>
       <NextEvent upcomingEvents=self.state.events />
     </Page>

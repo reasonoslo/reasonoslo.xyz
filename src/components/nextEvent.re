@@ -14,7 +14,7 @@ let make ::upcomingEvents _children => {
           padding::"2rem"
           () |> Styles.className
       )>
-      <div className=(Styles.make fontSize::"3rem" () |> Styles.className)>
+      <div className=(Styles.make fontSize::"2rem" () |> Styles.className)>
         (ReasonReact.stringToElement "Next event")
       </div>
       (
