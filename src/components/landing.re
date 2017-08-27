@@ -24,7 +24,12 @@ let make _children => {
         <p>
           (ReasonReact.stringToElement "Follow us on ")
           <a href="https://twitter.com/reasonoslo"> (ReasonReact.stringToElement "Twitter") </a>
-          (ReasonReact.stringToElement ".")
+          (ReasonReact.stringToElement ", and")
+          <br />
+          (ReasonReact.stringToElement "join the conversation at ")
+          <a href="https://spectrum.chat/reason-oslo">
+            (ReasonReact.stringToElement "spectrum.chat/reason-oslo")
+          </a>
         </p>
       </div>
       <NextEvent upcomingEvents=self.state.events />
