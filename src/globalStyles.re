@@ -11,6 +11,7 @@ let styles = [
       fontFamily::"sans-serif"
       justifyContent::"center"
       marginTop::"3em"
+      marginBottom::"10rem"
       fontSize::"18px"
       lineHeight::"1.45"
       ()
