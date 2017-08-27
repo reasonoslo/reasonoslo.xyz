@@ -1,20 +1,8 @@
-type state = {events: array Service.event};
-
 let component = ReasonReact.statefulComponent "Landing";
-
-let handleResponse events _self => ReasonReact.Update {events: events};
 
 let make _children => {
   ...component,
-  initialState: fun () => {events: [||]},
-  didMount: fun self => {
-    Js.Promise.(
-      Service.fetchNextEvents () |>
-      then_ (fun events => (self.update handleResponse) events |> resolve)
-    );
-    ReasonReact.NoUpdate
-  },
-  render: fun self =>
+  render: fun _self =>
     <Page>
       <div className=(Styles.make textAlign::"center" () |> Styles.className)>
         <img src="/static/logo.png" alt="Reason Oslo" width="300" />
@@ -32,7 +20,6 @@ let make _children => {
           </a>
         </p>
       </div>
-      <NextEvent upcomingEvents=self.state.events />
     </Page>
 };
 
