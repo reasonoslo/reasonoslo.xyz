@@ -12,15 +12,19 @@
     "dev": "nodemon -w server.js server.js"
   },
   "dependencies": {
-    "bs-loader": "^1.5.12",
-    "bs-platform": "^1.8.2",
+    "bs-fetch": "^0.1.1",
+    "bs-json": "^0.2.1",
+    "bs-loader": "^1.6.0",
+    "bs-platform": "^1.9.0",
+    "date-fns": "^1.28.5",
     "express": "^4.15.4",
     "glamor": "^2.20.40",
     "next": "^3.0.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "reason-js": "^0.3.0",
-    "reason-react": "^0.2.3"
+    "reason-react": "^0.2.3",
+    "superagent": "^3.6.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
