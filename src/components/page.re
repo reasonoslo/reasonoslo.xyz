@@ -17,7 +17,7 @@ let make ::path children => {
   render: fun self =>
     <div className=(Styles.make marginTop::"3rem" () |> Styles.className)>
       <Navbar path />
-      (ReasonReact.arrayToElement children)
+      (ReasonReact.createDomElement "div" props::{"id": "page-children"} children)
       <NextEvent upcomingEvents=self.state.events />
     </div>
 };
