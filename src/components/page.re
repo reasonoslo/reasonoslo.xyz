@@ -4,7 +4,7 @@ let component = ReasonReact.statefulComponent "Page";
 
 let handleResponse events _self => ReasonReact.Update {events: events};
 
-let make children => {
+let make ::path children => {
   ...component,
   initialState: fun () => {events: [||]},
   didMount: fun self => {
@@ -15,10 +15,13 @@ let make children => {
     ReasonReact.NoUpdate
   },
   render: fun self =>
-    <div>
+    <div className=(Styles.make marginTop::"3rem" () |> Styles.className)>
+      <Navbar path />
       (ReasonReact.arrayToElement children)
       <NextEvent upcomingEvents=self.state.events />
     </div>
 };
 
-let jsComponent = ReasonReact.wrapReasonForJs ::component (fun jsProps => make jsProps##children);
+let jsComponent =
+  ReasonReact.wrapReasonForJs
+    ::component (fun jsProps => make path::jsProps##path jsProps##children);
