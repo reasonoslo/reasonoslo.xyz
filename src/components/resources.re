@@ -42,6 +42,16 @@ let make _children => {
           </a>
         </li>
       </ul>
+      <strong>
+        (ReasonReact.stringToElement "Articles")
+      </strong>
+      <ul>
+        <li>
+          <a href="https://jamesfriend.com.au/a-first-reason-react-app-for-js-developers">
+            (ReasonReact.stringToElement "A First ReasonReact app for Javascript developers")
+          </a>
+        </li>
+      </ul>
     </div>
 };
 
