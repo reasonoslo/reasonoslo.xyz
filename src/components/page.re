@@ -1,27 +1,14 @@
-type state = {events: array Service.event};
+type state = {events: array(Service.event)};
 
-let component = ReasonReact.statefulComponent "Page";
+let component = ReasonReact.statelessComponent("Page");
 
-let handleResponse events _self => ReasonReact.Update {events: events};
+let handleResponse = (events, _self) => ReasonReact.Update({events: events});
 
-let make ::path children => {
+let make = (~path, children) => {
   ...component,
-  initialState: fun () => {events: [||]},
-  didMount: fun self => {
-    Js.Promise.(
-      Service.fetchNextEvents () |>
-      then_ (fun events => self.update handleResponse events |> resolve)
-    );
-    ReasonReact.NoUpdate
-  },
-  render: fun self =>
-    <div className=(Styles.make marginTop::"3rem" () |> Styles.className)>
+  render: _self =>
+    <div className=Css.(style([marginTop(rem(3.))]))>
       <Navbar path />
-      (ReasonReact.createDomElement "div" props::{"id": "page-children"} children)
-      <NextEvent upcomingEvents=self.state.events />
-    </div>
+      <main id="page-children"> ...children </main>
+    </div>,
 };
-
-let jsComponent =
-  ReasonReact.wrapReasonForJs
-    ::component (fun jsProps => make path::jsProps##path jsProps##children);

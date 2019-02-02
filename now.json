@@ -1,7 +1,0 @@
-{
-  "alias": "reasonoslo.xyz",
-  "type": "npm",
-  "env": {
-    "NODE_ENV": "production"
-  }
-}

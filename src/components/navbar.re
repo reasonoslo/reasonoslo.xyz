@@ -1,28 +1,40 @@
-let component = ReasonReact.statelessComponent "Resources";
+let navbarStyle =
+  Css.(
+    style([
+      position(absolute),
+      top(rem(0.)),
+      left(rem(0.)),
+      right(rem(0.)),
+      background(Colors.reason),
+      textAlign(center),
+    ])
+  );
 
 let navItemStyle =
-  Styles.make display::"inline-block" margin::"1rem" textDecoration::"none" () |> Styles.className;
+  Css.(
+    style([
+      display(inlineBlock),
+      margin(rem(1.)),
+      color(rgb(240, 240, 240)),
+      textDecoration(none),
+    ])
+  );
 
-let make ::path _children => {
+let string = ReasonReact.string;
+
+let component = ReasonReact.statelessComponent("Resources");
+let make = (~path: list(string), _children) => {
   ...component,
-  render: fun _self =>
-    switch path {
-    | "/" => <div />
+  render: _self => {
+    switch (path) {
+    | [] => <div />
     | _ =>
-      <div
-        className=(
-          Styles.make
-            position::"absolute"
-            top::"0"
-            left::"0"
-            right::"0"
-            borderBottom::"2px silver solid"
-            background::"white"
-            textAlign::"center"
-            () |> Styles.className
-        )>
-        <a href="/" className=navItemStyle> (ReasonReact.stringToElement "Reason Oslo") </a>
-        <a href="/resources" className=navItemStyle> (ReasonReact.stringToElement "Resources") </a>
-      </div>
-    }
+      <nav className=navbarStyle>
+        <a href="/" className=navItemStyle> {string("Reason Oslo")} </a>
+        <a href="/resources" className=navItemStyle>
+          {string("Resources")}
+        </a>
+      </nav>
+    };
+  },
 };

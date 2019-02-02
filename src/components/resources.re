@@ -1,58 +1,69 @@
-let component = ReasonReact.statelessComponent "Resources";
+let component = ReasonReact.statelessComponent("Resources");
 
-let make _children => {
+let make = _children => {
   ...component,
-  render: fun _self =>
+  render: _self =>
     <div
-      className=(
-        Styles.make textAlign::"left" border::"3px dashed" padding::"20px" margin::"140px" () |> Styles.className
+      className=Css.(
+        style([
+          textAlign(`left),
+          border(px(3), dashed, rgb(0, 0, 0)),
+          padding(px(20)),
+          margin(px(140)),
+        ])
       )>
-      <h1> (ReasonReact.stringToElement "Good Resources") </h1>
+      <h1> {ReasonReact.string("Good Resources")} </h1>
       <ul>
         <li>
           <a href="https://reasonml.github.io/">
-            (ReasonReact.stringToElement "Reason documentation")
+            {ReasonReact.string("Reason documentation")}
           </a>
         </li>
         <li>
-          <a href="https://reasonml.github.io/guide/editor-tools/global-installation">
-            (ReasonReact.stringToElement "Tool installation")
+          <a
+            href="https://reasonml.github.io/guide/editor-tools/global-installation">
+            {ReasonReact.string("Tool installation")}
           </a>
         </li>
         <li>
-          <a href="https://reasonml.github.io/guide/javascript/syntax-cheatsheet">
-            (ReasonReact.stringToElement "Syntax cheatsheet")
+          <a
+            href="https://reasonml.github.io/guide/javascript/syntax-cheatsheet">
+            {ReasonReact.string("Syntax cheatsheet")}
           </a>
         </li>
       </ul>
       <strong>
         <a href="https://jaredforsyth.com/">
-          (ReasonReact.stringToElement "Jared Forsyths blog")
+          {ReasonReact.string("Jared Forsyths blog")}
         </a>
       </strong>
       <ul>
         <li>
-          <a href="https://jaredforsyth.com/2017/07/05/a-reason-react-tutorial/">
-            (ReasonReact.stringToElement "A ReasonReact Tutorial")
+          <a
+            href="https://jaredforsyth.com/2017/07/05/a-reason-react-tutorial/">
+            {ReasonReact.string("A ReasonReact Tutorial")}
           </a>
         </li>
         <li>
-          <a href="https://jaredforsyth.com/2017/06/17/your-first-native-reason-ocaml-project/">
-            (ReasonReact.stringToElement "Your first native Reason/OCaml project")
+          <a
+            href="https://jaredforsyth.com/2017/06/17/your-first-native-reason-ocaml-project/">
+            {ReasonReact.string("Your first native Reason/OCaml project")}
           </a>
         </li>
       </ul>
-      <strong>
-        (ReasonReact.stringToElement "Articles")
-      </strong>
+      <strong> {ReasonReact.string("Articles")} </strong>
       <ul>
         <li>
-          <a href="https://jamesfriend.com.au/a-first-reason-react-app-for-js-developers">
-            (ReasonReact.stringToElement "A First ReasonReact app for Javascript developers")
+          <a
+            href="https://jamesfriend.com.au/a-first-reason-react-app-for-js-developers">
+            {ReasonReact.string(
+               "A First ReasonReact app for Javascript developers",
+             )}
           </a>
         </li>
       </ul>
-    </div>
+    </div>,
 };
 
-let jsComponent = ReasonReact.wrapReasonForJs ::component (fun _jsProps => make [||]);
+let jsComponent =
+  ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));
