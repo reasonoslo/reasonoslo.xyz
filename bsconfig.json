@@ -1,7 +1,7 @@
 {
   "name" : "reasonoslo.xyz",
   "reason" : { "react-jsx" : 2},
-  "bs-dependencies": ["reason-react", "bs-fetch", "bs-css"],
+  "bs-dependencies": ["reason-react", "bs-fetch", "bs-css", "@glennsl/bs-json"],
   "bsc-flags": [
     "-bs-no-version-header",
     "-bs-super-errors"

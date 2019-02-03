@@ -26,9 +26,9 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "@glennsl/bs-json": "^3.0.0",
     "bs-css": "^8.0.1",
     "bs-fetch": "^0.3.1",
-    "bs-json": "^1.0.1",
     "got": "^9.6.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

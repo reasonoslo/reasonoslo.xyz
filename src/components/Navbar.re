@@ -1,12 +1,23 @@
+open Constants;
 let navbarStyle = Css.(style([background(Colors.red), textAlign(center)]));
 
 let landingHeaderStyle =
   Css.(
     style([
       display(`flex),
+      flexDirection(`column),
       minHeight(pct(50.)),
-      alignItems(`flexEnd),
+      alignItems(`center),
+      justifyContent(`center),
       `transition("height 1s"),
+      media(
+        Media.large,
+        [
+          flexDirection(`row),
+          justifyContent(`flexStart),
+          alignItems(`flexEnd),
+        ],
+      ),
     ])
   );
 

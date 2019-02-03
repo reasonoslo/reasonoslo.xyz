@@ -17,6 +17,8 @@ global(
 
 global("#root", [width(pct(100.)), margin(px(0))]);
 
+global("p", [marginTop(rem(0.))]);
+
 global(
   "a",
   [color(Colors.red), selector(":hover", [color(Colors.darkRed)])],
