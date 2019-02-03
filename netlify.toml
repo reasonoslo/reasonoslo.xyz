@@ -1,7 +1,8 @@
 [build]
   base = "./"
   publish = "build/"
-  command = "yarn build:production"
+  command = "yarn netlify"
+  functions = ".functions"
 
 [[redirects]]
   from = "/*"
