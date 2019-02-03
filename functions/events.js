@@ -22,8 +22,11 @@ async function fetch(argument) {
 }
 
 exports.handler = async function(event, context, callback) {
+  console.log(event.method, event.path)
   try {
-    const [_, name, argument] = (event.path || "").split("/");
+    const [_, name, argument] = (event.path || "")
+      .replace("/.netlify/functions")
+      .split("/");
 
     const events = await fetch(argument);
     callback(null, {
@@ -34,6 +37,6 @@ exports.handler = async function(event, context, callback) {
       body: JSON.stringify({ events })
     });
   } catch (error) {
-    callback(error);
+    callback(error, {});
   }
 };
