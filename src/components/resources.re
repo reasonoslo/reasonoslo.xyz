@@ -64,6 +64,3 @@ let make = _children => {
       </ul>
     </div>,
 };
-
-let jsComponent =
-  ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));

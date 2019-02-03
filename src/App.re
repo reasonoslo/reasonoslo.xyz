@@ -10,7 +10,6 @@ let make = _children => {
     path: ReasonReact.Router.dangerouslyGetInitialUrl().path,
   },
   reducer: (action, _state) => {
-    Js.log(action);
     switch (action) {
     | UpdatePath(path) => ReasonReact.Update({path: path})
     };
