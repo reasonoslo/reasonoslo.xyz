@@ -1,7 +1,13 @@
 module.exports = {
   target: 'node',
-  node: false,
-  externals: {},
+  node: {
+    console: true,
+    process: true,
+    __dirname: true,
+  },
+  externals: {
+    http: 'http',
+  },
   module: {
     rules: [
       {
@@ -9,5 +15,5 @@ module.exports = {
         type: 'javascript/auto',
       },
     ],
-  },
+  }
 };

@@ -10,7 +10,7 @@
   "scripts": {
     "build": "bsb -make-world",
     "clean": "bsb -clean-world",
-    "dev:frontend": "webpack-dev-server",
+    "dev:frontend": "bsb -make-world && webpack-dev-server",
     "dev:server": "netlify-lambda serve functions",
     "build:server": "NODE_ENV=production netlify-lambda build -c webpack.functions.config.js functions",
     "build:frontend": "yarn build && NODE_ENV=production webpack",

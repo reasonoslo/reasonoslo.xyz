@@ -10,6 +10,7 @@ module.exports = {
   mode: isProd ? 'production' : 'development',
   output: {
     path: outputDir,
+    publicPath: "/"
   },
   plugins: [
     new CopyWebpackPlugin([{ from: './static', to: 'static' }]),
@@ -22,6 +23,9 @@ module.exports = {
     compress: true,
     contentBase: outputDir,
     port: process.env.PORT || 8000,
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      "/.netlify/functions": "http://localhost:9000"
+    }
   }
 };
