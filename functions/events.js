@@ -48,8 +48,6 @@ exports.handler = async function(event) {
     const parts = (event.path || "").replace("/.netlify/functions").split("/");
     const argument = parts[2];
 
-    console.log(argument);
-
     const events = await fetch(argument);
     return response({ body: { events } });
   } catch (error) {
