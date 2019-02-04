@@ -13,14 +13,14 @@ let wrapper =
       margin(`auto),
       media(
         Media.large,
-        [fontSize(em(1.4)), flexDirection(`row), padding(rem(4.))],
+        [fontSize(em(1.4)), flexDirection(`row), padding(rem(2.))],
       ),
     ])
   );
 
 let nextEventWrapper =
   Css.(
-    style([width(pct(100.)), media(Media.large, [width(pct(35.))])])
+    style([width(pct(100.)), media(Media.large, [width(pct(45.))])])
   );
 
 let component = ReasonReact.statelessComponent("Landing");
@@ -34,6 +34,7 @@ let make = _children => {
           <a href="https://twitter.com/reasonoslo"> {string("Twitter")} </a>
           {string(", and ")}
           {string("join the conversation at ")}
+          <br />
           <a href="https://spectrum.chat/reason-oslo">
             {string("spectrum.chat/reason-oslo")}
           </a>

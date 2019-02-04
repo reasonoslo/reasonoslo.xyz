@@ -1,7 +1,7 @@
 type state = {events: array(Service.event)};
 
 let contentWrapper =
-  Css.(style([width(pct(90.0)), maxWidth(px(700)), margin(`auto)]));
+  Css.(style([width(pct(90.0)), maxWidth(px(800)), margin(`auto)]));
 
 let component = ReasonReact.statelessComponent("Page");
 let make = (~path, children) => {
