@@ -24,14 +24,22 @@ let navItemStyle =
   Css.(
     style([
       display(inlineBlock),
-      margin(rem(1.)),
+      margin(px(20)),
       color(rgb(240, 240, 240)),
       textDecoration(none),
-      borderBottom(px(2), solid, rgba(0, 0, 0, 0.)),
+      borderBottom(px(3), solid, rgba(0, 0, 0, 0.)),
       lineHeight(em(0.98)),
       hover([
         color(rgb(240, 240, 240)),
-        borderBottom(px(2), solid, Colors.darkRed),
+        borderBottom(px(3), solid, Colors.darkRed),
+      ]),
+      focus([
+        padding(px(6)),
+        margin(px(14)),
+        outline(px(0), solid, rgba(0, 0, 0, 0.)),
+        background(Colors.darkRed),
+        color(rgb(240, 240, 240)),
+        borderBottom(px(3), solid, Colors.darkRed),
       ]),
     ])
   );
