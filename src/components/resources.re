@@ -33,6 +33,13 @@ let links = [|
   {url: "https://redex.github.io/", title: "Redex: package index"},
 |];
 
+let videos = [|
+  {
+    url: "https://egghead.io/courses/get-started-with-reason",
+    title: "Get Started with Reason - egghead.io course",
+  },
+|];
+
 let articles = [|
   {
     url: "https://jamesfriend.com.au/a-first-reason-react-app-for-js-developers",
@@ -89,6 +96,15 @@ let make = _children => {
                 <a href={article.url}> {string(article.title)} </a>
                 <br />
                 {string("Published " ++ article.published)}
+              </li>
+            )}
+      </ul>
+      <h2> {string("Videos")} </h2>
+      <ul>
+        {videos
+         |> array((video: link) =>
+              <li key={video.url}>
+                <a href={video.url}> {string(video.title)} </a>
               </li>
             )}
       </ul>
