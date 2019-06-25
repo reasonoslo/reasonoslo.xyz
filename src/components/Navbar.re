@@ -83,6 +83,9 @@ let make = (~path: list(string)) => {
            <Link href="/resources" className=navItemStyle>
              {string("Resources")}
            </Link>
+           <Link href="/code-of-conduct" className=navItemStyle>
+             {string("Code of Conduct")}
+           </Link>
          </>
        }}
     </div>
