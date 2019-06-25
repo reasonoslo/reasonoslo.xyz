@@ -109,32 +109,30 @@ let renderLinks =
     </li>
   );
 
-let component = ReasonReact.statelessComponent("Resources");
-let make = _children => {
-  ...component,
-  render: _self =>
-    <div className=Css.(style([textAlign(`left)]))>
-      <h1> {string("Good Resources")} </h1>
-      <p>
-        {string(
-           "This page contains links to a few good resources "
-           ++ "like documentation and getting started tutorials.",
-         )}
-      </p>
-      <ul
-        className=Css.(
-          style([
-            marginBottom(rem(2.)),
-            media(Media.large, [columnCount(`count(2))]),
-          ])
-        )>
-        {renderLinks(links)}
-      </ul>
-      <h2> {string("Articles")} </h2>
-      <ul> {renderLinks(articles)} </ul>
-      <h2> {string("Videos")} </h2>
-      <ul> {renderLinks(videos)} </ul>
-      <h2> {string("Books")} </h2>
-      <ul> {renderLinks(books)} </ul>
-    </div>,
+[@react.component]
+let make = () => {
+  <div className=Css.(style([textAlign(`left)]))>
+    <h1> {string("Good Resources")} </h1>
+    <p>
+      {string(
+         "This page contains links to a few good resources "
+         ++ "like documentation and getting started tutorials.",
+       )}
+    </p>
+    <ul
+      className=Css.(
+        style([
+          marginBottom(rem(2.)),
+          media(Media.large, [columnCount(`count(2))]),
+        ])
+      )>
+      {renderLinks(links)}
+    </ul>
+    <h2> {string("Articles")} </h2>
+    <ul> {renderLinks(articles)} </ul>
+    <h2> {string("Videos")} </h2>
+    <ul> {renderLinks(videos)} </ul>
+    <h2> {string("Books")} </h2>
+    <ul> {renderLinks(books)} </ul>
+  </div>;
 };
