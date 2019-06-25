@@ -33,8 +33,9 @@ let make = () => {
         {string(", and ")}
         {string("join the conversation at ")}
         <br />
-        <a href="https://spectrum.chat/reason-oslo">
-          {string("spectrum.chat/reason-oslo")}
+        <a
+          href="https://join.slack.com/t/reasonoslo/shared_invite/enQtNjc4MTU1NTQ0ODg2LWNjMGYyZGU3ODQ3Yzc0OGI3YWQ4NjAzY2MxMmU0NzM4YmRlMWYxYWFiMmZhMjU5MWM4MjhhZmViZDFlNjIxOTc">
+          {string("reasonoslo.slack.com")}
         </a>
         {string(".")}
       </p>
